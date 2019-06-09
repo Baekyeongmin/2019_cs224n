@@ -344,7 +344,7 @@ class NMT(nn.Module):
         dec_hidden, dec_cell = dec_state
         dec_hidden = torch.unsqueeze(dec_hidden, 2)
         e_t = torch.bmm(enc_hiddens_proj, dec_hidden)
-        e_t = torch.squeeze(e_t)
+        e_t = torch.squeeze(e_t, 2)
 
         ### END YOUR CODE
 
